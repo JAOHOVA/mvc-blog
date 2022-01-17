@@ -1,29 +1,15 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <title>Mon blog</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-<header>
-    <h1>Mon blog</h1>
-</header>
-<section>
-    <nav>
-        <ul>
-            <li><a href="/">Accueil</a></li>
-        </ul>
-    </nav>
+<?php
+$titre = 'Mon blog';
+ob_start();
+?>
     <article>
         <?php foreach ($posts as $post): ?>
-            <img src="posts/<?= $post->image ?>" width="250" />
-            <h2><?= $post->title ?></h2>
+            <a href="?id=<?= $post->getId() ?>">
+                <img src="images/<?= $post->getImage() ?>" width="250" />
+            </a>
+            <h2><?= $post->getTitle() ?></h2>
         <?php endforeach; ?>
     </article>
-</section>
-<footer>
-    <p>Mon blog - Tous droits réservés</p>
-</footer>
-</body>
-</html>
+<?php
+$content = ob_get_clean();
+require_once('layout.php');

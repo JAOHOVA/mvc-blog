@@ -2,24 +2,15 @@
 
 class Posts
 {
-    private $pdo = null;
+    use Model;
 
-    public function __construct()
-    {
-        try {
-            $this->pdo = new PDO('mysql:host=localhost;dbname=blog;charset=utf8', 'root', 'root');
-        } catch (PDOException $e) {
-            exit('Erreur : '.$e->getMessage());
-        }
-    }
-
-    public function listerPosts()
+    public function getPosts()
     {
         if (!is_null($this->pdo)) {
-            $stmt = $this->pdo->query('SELECT title, image FROM post');
+            $stmt = $this->pdo->query('SELECT id, image, title FROM post');
         }
         $posts = [];
-        while ($post = $stmt->fetchObject()) {
+        while ($post = $stmt->fetchObject('Post')) {
             $posts[] = $post;
         }
 

@@ -1,7 +1,13 @@
-À vous de jouer ! Vous venez d'écrire la première page de votre blog, mais vous trouvez qu'elle n'est pas très lisible. Séparez-la donc en plusieurs fichiers :
+Continuez à segmenter votre code en ajoutant la possibilité de voir le détail d'un article. Pour cela, vous aurez besoin de :
 
-    un fichier models/Posts.php qui va s'occuper des accès à la base de données et qui sera notre modèle,
+    un contrôleur frontal index.php
 
-    un fichier views/posts-list.php qui va s'occuper de l'affichage et qui sera notre vue,
+    un contrôleur controllers/Controller.php pour voir un article et lister des articles
 
-    un fichier index.php qui va s'occuper de la glue entre le modèle et la vue et qui sera notre contrôleur.
+    un trait générique models/Model.php contenant l'accès à la base de données
+
+    deux modèles models/Posts.php et models/Post.php pour récupérer respectivement une liste d'articles et un unique article
+
+    deux templates views/posts-list.php et views/post-show.php pour afficher respectivement une liste d'articles et un unique article
+
+    un template global views/layout.php contenant l'ossature de vos pages HTML
