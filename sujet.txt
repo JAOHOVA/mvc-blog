@@ -1,0 +1,7 @@
+À vous de jouer ! Vous venez d'écrire la première page de votre blog, mais vous trouvez qu'elle n'est pas très lisible. Séparez-la donc en plusieurs fichiers :
+
+    un fichier models/Posts.php qui va s'occuper des accès à la base de données et qui sera notre modèle,
+
+    un fichier views/posts-list.php qui va s'occuper de l'affichage et qui sera notre vue,
+
+    un fichier index.php qui va s'occuper de la glue entre le modèle et la vue et qui sera notre contrôleur.
